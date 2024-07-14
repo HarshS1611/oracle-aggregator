@@ -67,7 +67,7 @@ function App() {
 
   return (
     <div className='flex flex-col gap-10 items-center justify-center h-screen'>
-      <div className='text-4xl mt-20 font-bold'>Crypto Price Aggregator</div>
+      <div className='text-4xl mt-20 font-bold'>Crypto Oracle Price Aggregator</div>
       <p className='text-xl'>Fetch Latest Price of Cryptos</p>
       {avgPrice ?
         <p className='text-xl p-4 bg-gray-100 rounded-lg'>Average Price of {priceFeedId2[selecedTab]}: $ {(avgPrice).toString().substring(0, 10)}</p>
