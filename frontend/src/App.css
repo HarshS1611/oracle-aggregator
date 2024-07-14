@@ -1,42 +1,68 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+.tab-container {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  padding: 2px;
+
+  background-color: #dadadb;
+  border-radius: 9px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.indicator {
+  content: "";
+  width: 130px;
+  height: 28px;
+  background: #ffffff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 9;
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12), 0px 3px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 7px;
+  transition: all 0.2s ease-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.tab {
+  width: 130px;
+  height: 28px;
+  position: absolute;
+  z-index: 99;
+  outline: none;
+  opacity: 0;
 }
 
-.card {
-  padding: 2em;
+.tab_label {
+  width: 130px;
+  height: 28px;
+
+  position: relative;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  font-size: 0.75rem;
+  opacity: 0.6;
+
+  cursor: pointer;
 }
 
-.read-the-docs {
-  color: #888;
+.tab--1:checked ~ .indicator {
+  left: 2px;
+}
+
+.tab--2:checked ~ .indicator {
+  left: calc(130px + 2px);
+}
+
+.tab--3:checked ~ .indicator {
+  left: calc(130px * 2 + 2px);
 }
